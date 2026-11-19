@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Aroma - Inicio</title>
+
+    <script src="https://kit.fontawesome.com/f75a161fc6.js" crossorigin="anonymous"></script>
+
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+    <!-- tipografía (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Bootstrap Icons + Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="Styles/style.css">
+</head>
+
+<!-- el sabor que te despierta -->
+
+<body>
+
+    <!-- encabezado -->
+    <header>
+
+        <div class="container-hero">
+            <div class="container hero">
+
+                <div class="container-logo">
+                    <svg class="logo-svg" viewBox="0 0 64 64" aria-hidden="true">
+                        <path class="vapor v1" d="M22 24c-4-4 4-7 0-12" />
+                        <path class="vapor v2" d="M32 24c-4-4 4-7 0-12" />
+                        <path class="vapor v3" d="M42 24c-4-4 4-7 0-12" />
+                        <path class="taza" d="M12 30h38v6a16 16 0 0 1-16 16h-6A16 16 0 0 1 12 36z" />
+                        <path class="contorno" d="M50 34h2a6 6 0 0 1 0 12h-4" />
+                        <path class="contorno" d="M10 58h44" />
+                    </svg>
+                    <h1 class="logo"><a href="index.html">Aroma & Grano</a></h1>
+                </div>
+
+
+                <div class="container-shopping">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="content-shoping-cart">
+                        <span class="text">Carrito</span>
+                        <span class="number">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-navbar">
+            <nav class="navbar navbar-expand-lg container">
+                <!-- Cambio 3: menú colapsable de Bootstrap -->
+                <button class="menu-toggle d-lg-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false"
+                    aria-label="Abrir o cerrar el menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="menu">
+                        <!--Ajuste -->
+                        <li><a href="index.html"><i class="fa-solid fa-house" aria-hidden="true"></i> inicio</a></li>
+                        <li><a href="#">menú</a></li>
+                        <!--Ajuste -->
+                        <li><a href="Pages/contacto.html"><i class="fa-regular fa-calendar-check"
+                                    aria-hidden="true"></i> contacto y reservas</a></li>
+                        <li><a href="#">blog</a></li>
+                        <li><a href="#">nosotros</a></li>
+                    </ul>
+
+                    <form class="search-form">
+                        <input type="search" name="buscar" id="buscar" placeholder="Buscar...">
+                        <button type="submit" class="btn-search" aria-label="Buscar">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+
+    <section class="banner">
+        <div class="content-banner">
+            <p>100% natural</p>
+            <h2>El sabor que <br> te despierta</h2>
+            <a href="#">¡Comprar ahora!</a>
+            <a href="#" id="btn-register" data-bs-toggle="modal" data-bs-target="#modalRegistro">Registrarse</a>
+        </div>
+    </section>
+
+    <main class="main-content">
+
+        <section class="container top-products container-card-products">
+            <h2 class="heading-2">Mejores productos</h2>
+            <div class="container-products">
+                <div class="card-product">
+                    <div class="container-img">
+                        <span class="badge badge-top">Más vendido</span>
+                        <img src="cafe-irish.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Irish</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-ingles.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Inglés</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-australiano.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Australiano</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-helado.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Australiano</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container container-table postres-dia">
+            <h2 class="heading-2">Postres del día</h2>
+            <table class="table-postres">
+                <thead>
+                    <tr>
+                        <th>Postre</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Postre">Cheesecake de fresa</td>
+                        <td data-label="Descripción">Base de galleta, queso crema y mermelada de fresa artesanal</td>
+                        <td data-label="Precio">S/8.50</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Postre">Brownie con nueces</td>
+                        <td data-label="Descripción">Chocolate 70% cacao, nueces tostadas y un toque de sal marina</td>
+                        <td data-label="Precio">S/6.90</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Postre">Alfajor artesanal</td>
+                        <td data-label="Descripción">Manjar blanco casero entre dos capas de masa fina</td>
+                        <td data-label="Precio">S/4.50</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Postre">Torta tres leches</td>
+                        <td data-label="Descripción">Bizcocho esponjoso bañado en tres tipos de leche y canela</td>
+                        <td data-label="Precio">S/7.80</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+        <section class="gallery">
+            <img src="img/gallery1.jpg" alt="Gallery Img1" class="gallery-img-1" />
+            <img src="img/gallery2.jpg" alt="Gallery Img2" class="gallery-img-2" />
+            <img src="img/gallery3.jpg" alt="Gallery Img3" class="gallery-img-3" />
+            <img src="img/gallery4.jpg" alt="Gallery Img4" class="gallery-img-4" />
+            <img src="img/gallery5.jpg" alt="Gallery Img5" class="gallery-img-5" />
+        </section>
+
+        <section class="container frappuccinos container-card-products">
+            <h2 class="heading-2">Frappuccinos</h2>
+            <div class="container-products">
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-irish.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Irish</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-ingles.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Inglés</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-australiano.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Australiano</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-helado.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Australiano</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-irish.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Irish</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-ingles.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Inglés</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-australiano.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Australiano</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-helado.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Australiano</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <section class="container cafe-caliente container-card-products">
+            <h2 class="heading-2">Café Caliente</h2>
+            <div class="container-products">
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-irish.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Irish</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-ingles.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Inglés</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-australiano.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Australiano</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-helado.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Australiano</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-irish.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Irish</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-ingles.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Inglés</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-australiano.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Australiano</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-helado.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Australiano</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="container cafe-frio container-card-products">
+
+            <h2 class="heading-2">Café frio</h2>
+            <div class="container-products">
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-irish.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Irish</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-ingles.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Inglés</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-australiano.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Australiano</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-helado.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Australiano</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-irish.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Irish</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-ingles.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Inglés</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-australiano.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Australiano</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="cafe-helado.jpg" alt="café irish">
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Australiano</h3>
+                        <span class="add-car">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <p class="price">S/4.60</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="container container-table comparativa">
+            <h2 class="heading-2">Comparativa de nuestros cafés</h2>
+            <table class="table-comparativa">
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Espresso</th>
+                        <th>Cappuccino</th>
+                        <th>Café Irish</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Característica">Intensidad</td>
+                        <td data-label="Espresso">Alta</td>
+                        <td data-label="Cappuccino">Media</td>
+                        <td data-label="Café Irish">Media - Alta</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Característica">Leche</td>
+                        <td data-label="Espresso">No lleva</td>
+                        <td data-label="Cappuccino">Espumada</td>
+                        <td data-label="Café Irish">Crema batida</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Característica">Contiene alcohol</td>
+                        <td data-label="Espresso">No</td>
+                        <td data-label="Cappuccino">No</td>
+                        <td data-label="Café Irish">Sí (whisky)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Característica">Precio</td>
+                        <td data-label="Espresso">S/3.50</td>
+                        <td data-label="Cappuccino">S/4.20</td>
+                        <td data-label="Café Irish">S/4.60</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Cambio 4: CSS Grid (auto-fit) + Flexbox dentro de cada beneficio -->
+        <section class="container container-card-products beneficios">
+            <h2 class="heading-2">¿Por qué Aroma &amp; Grano?</h2>
+            <div class="grid-beneficios">
+                <article class="beneficio">
+                    <i class="bi bi-cup-hot"></i>
+                    <div>
+                        <h3>Tostado artesanal</h3>
+                        <p>Tostamos en lotes pequeños para conservar todo el aroma del grano.</p>
+                    </div>
+                </article>
+                <article class="beneficio">
+                    <i class="bi bi-geo-alt"></i>
+                    <div>
+                        <h3>Café peruano</h3>
+                        <p>Trabajamos con granos de origen peruano, preparados con pasión.</p>
+                    </div>
+                </article>
+                <article class="beneficio">
+                    <i class="bi bi-bicycle"></i>
+                    <div>
+                        <h3>Pide y recibe</h3>
+                        <p>Elige tus productos, añádelos al carrito y disfrútalos donde estés.</p>
+                    </div>
+                </article>
+                <article class="beneficio">
+                    <i class="bi bi-calendar-check"></i>
+                    <div>
+                        <h3>Reserva tu mesa</h3>
+                        <p>Separa tu lugar en minutos desde la página de contacto y reservas.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Cambio 3: grilla de Bootstrap (row / col), carrusel y acordeón -->
+        <section class="container container-card-products opiniones-faq">
+            <h2 class="heading-2">Opiniones y preguntas frecuentes</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id="carruselOpiniones" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000"
+                        aria-label="Opiniones de clientes">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carruselOpiniones" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Opinión 1"></button>
+                            <button type="button" data-bs-target="#carruselOpiniones" data-bs-slide-to="1"
+                                aria-label="Opinión 2"></button>
+                            <button type="button" data-bs-target="#carruselOpiniones" data-bs-slide-to="2"
+                                aria-label="Opinión 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <figure class="testimonio">
+                                    <i class="bi bi-quote"></i>
+                                    <blockquote>El Café Irish es mi parada de los viernes. Aromático y con la crema
+                                        justa.</blockquote>
+                                    <figcaption>Lucía M., clienta frecuente</figcaption>
+                                </figure>
+                            </div>
+                            <div class="carousel-item">
+                                <figure class="testimonio">
+                                    <i class="bi bi-quote"></i>
+                                    <blockquote>Reservamos una mesa para seis y todo estuvo listo cuando llegamos.
+                                    </blockquote>
+                                    <figcaption>Carlos R., reunión de amigos</figcaption>
+                                </figure>
+                            </div>
+               <div class="carousel-item">
+                    <figure class="testimonio">
+                        <i class="bi bi-quote"></i>
+                        <blockquote>El café helado con el cheesecake de fresa es una combinación perfecta.
+                        </blockquote>
+                        <figcaption>Andrea P., visita de tarde</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carruselOpiniones"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carruselOpiniones"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+            </div>
+            </div>
+
+            <div class="col-lg-6">
+                <h3 class="faq-titulo">Preguntas frecuentes</h3>
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h4 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                ¿Puedo reservar una mesa en línea?
+                            </button>
+                        </h4>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">Sí. Completa el formulario de la página de contacto y
+                                reservas con la fecha, la hora y el número de personas.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h4 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                                ¿Todos los cafés llevan alcohol?
+                            </button>
+                        </h4>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">No. El Espresso y el Cappuccino no llevan alcohol; el Café
+                                Irish es el que lleva whisky.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h4 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                                ¿Cuál es el horario de atención?
+                            </button>
+                        </h4>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">Lunes a viernes de 7:00 am a 9:00 pm, sábados de 8:00 am a
+                                10:00 pm y domingos de 8:00 am a 6:00 pm.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+
+            <div class="footer-col">
+                <div class="container-logo">
+                    <i class="fa-solid fa-mug-hot"></i>
+                    <h2 class="logo">Aroma & Grano</h2>
+                </div>
+                <p>Café de especialidad tostado en Perú, preparado con pasión desde el primer grano hasta la última
+                    taza.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#">Carta</a></li>
+                    <li><a href="Pages/contacto.html">Contacto y reservas</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Horario</h3>
+                <ul>
+                    <li>Lunes a viernes: 7:00 am - 9:00 pm</li>
+                    <li>Sábados: 8:00 am - 10:00 pm</li>
+                    <li>Domingos: 8:00 am - 6:00 pm</li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contáctanos</h3>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> Av. Los Cafetos 245, Lima</li>
+                    <li><i class="fa-solid fa-phone"></i> +51 987 654 321</li>
+                    <li><i class="fa-solid fa-envelope"></i> hola@aromaygrano.pe</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Aroma & Grano. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+
+    <!-- Cambio 3: ventana modal de Bootstrap (se abre con el botón "Registrarse") -->
+    <div class="modal fade" id="modalRegistro" tabindex="-1" aria-labelledby="modalRegistroLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="modalRegistroLabel">Crea tu cuenta</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <form id="formRegistro">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="reg-nombre">Nombre completo</label>
+                            <input type="text" id="reg-nombre" placeholder="Ingresa tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-correo">Correo electrónico</label>
+                            <input type="email" id="reg-correo" placeholder="tucorreo@ejemplo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-clave">Contraseña</label>
+                            <input type="password" id="reg-clave" minlength="6" placeholder="Mínimo 6 caracteres"
+                                required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-aroma" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-aroma">Registrarme</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cambio 3: aviso (toast) de Bootstrap -->
+    <div class="toast-container">
+        <div id="toastAviso" class="toast border-0" role="status" aria-live="polite" aria-atomic="true">
+            <div class="d-flex align-items-center">
+                <div class="toast-body" id="toastAvisoMsg"></div>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"
+                    aria-label="Cerrar"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Scripts/main.js"></script>
+
+</body>
+
+</html>
