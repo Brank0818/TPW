@@ -1393,3 +1393,657 @@ button:focus-visible,
         border-bottom: 3px solid var(--background-color);
     }
 }
+
+/* ==========================================================================
+   5 — Interactividad con JavaScript
+   (estilos de los elementos que crean o controlan los archivos de Scripts/)
+   ========================================================================== */
+
+/* El carrito del encabezado y el botón de cada tarjeta ahora son <button> */
+button.container-shopping {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    align-items: center;
+}
+
+button.container-shopping .content-shoping-cart {
+    font-size: 1.4rem;
+}
+
+button.add-car {
+    background-color: transparent;
+}
+
+.card-product:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+/* Menú responsivo: animación al abrirse con JavaScript (clase "show") */
+@keyframes desplegar {
+    from {
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse.show {
+        animation: desplegar .3s ease;
+    }
+}
+
+/* Carta: filtros, orden y resultados */
+.herramientas-carta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.filtros-carta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.btn-filtro {
+    font-family: var(--font-body);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    background-color: #fff;
+    border: 2px solid var(--primary-color);
+    border-radius: 2rem;
+    padding: .8rem 1.8rem;
+    cursor: pointer;
+    transition: background-color .3s ease, color .3s ease, transform .3s ease;
+}
+
+.btn-filtro:hover {
+    transform: translateY(-.2rem);
+}
+
+.btn-filtro.activo {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.orden-carta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.4rem;
+}
+
+.orden-carta select,
+.form-group select {
+    font-family: inherit;
+    font-size: 1.4rem;
+    padding: .8rem 1.2rem;
+    border: 2px solid var(--primary-color);
+    border-radius: .5rem;
+    background-color: #fff;
+    color: var(--dark-color);
+    cursor: pointer;
+}
+
+.resultados-carta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    color: var(--dark-color);
+}
+
+.btn-limpiar {
+    display: none;
+    /* JavaScript lo muestra cuando hay una búsqueda */
+    font-family: inherit;
+    font-size: 1.3rem;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.carta .container-products {
+    margin-top: 2rem;
+}
+
+.sin-resultados {
+    display: none;
+    /* JavaScript lo muestra si no hay productos */
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #fff;
+    border-radius: .5rem;
+    margin-bottom: 4rem;
+}
+
+.sin-resultados .bi {
+    font-size: 5rem;
+    color: var(--primary-color);
+}
+
+.sin-resultados p {
+    font-size: 1.6rem;
+    margin: 1rem 0 2rem;
+}
+
+/* Ventanas flotantes propias (detalle del producto y carrito) */
+.ventana-flotante {
+    position: fixed;
+    inset: 0;
+    z-index: 1080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: rgba(45, 41, 66, .6);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease, visibility .3s ease;
+}
+
+.ventana-flotante.abierta {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ventana-contenido {
+    position: relative;
+    background-color: #fff;
+    border-radius: .8rem;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, .3);
+    max-height: 100%;
+    overflow-y: auto;
+    transform: translateY(3rem) scale(.96);
+    transition: transform .3s ease;
+}
+
+.ventana-flotante.abierta .ventana-contenido {
+    transform: translateY(0) scale(1);
+}
+
+.ventana-cerrar {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: transform .3s ease, background-color .3s ease;
+    z-index: 2;
+}
+
+.ventana-cerrar:hover {
+    transform: rotate(90deg);
+    background-color: var(--secondary-color);
+}
+
+/* Detalle del producto */
+.detalle-producto {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    width: 100%;
+    max-width: 82rem;
+}
+
+.detalle-imagen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f6f3f0;
+    padding: 3rem;
+}
+
+.detalle-imagen img {
+    width: 100%;
+    max-width: 30rem;
+}
+
+.detalle-info {
+    padding: 3.5rem 3rem 3rem;
+    font-size: 1.4rem;
+    color: var(--dark-color);
+}
+
+.detalle-categoria {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    padding: .4rem 1.2rem;
+    border-radius: 2rem;
+}
+
+.detalle-info h2 {
+    font-size: 3rem;
+    margin: 1rem 0 .5rem;
+}
+
+.detalle-descripcion {
+    margin: 1.5rem 0;
+    line-height: 1.6;
+}
+
+.detalle-info h3 {
+    font-size: 1.6rem;
+    margin-bottom: .8rem;
+}
+
+.detalle-ingredientes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+    margin-bottom: 1.5rem;
+}
+
+.detalle-ingredientes li {
+    font-size: 1.25rem;
+    background-color: var(--background-color);
+    padding: .4rem 1.1rem;
+    border-radius: 2rem;
+}
+
+.detalle-alcohol {
+    display: none;
+    /* JavaScript lo muestra solo para el Café Irish */
+    align-items: center;
+    gap: .8rem;
+    font-size: 1.3rem;
+    color: #8a4b00;
+    background-color: #fff3e0;
+    padding: .8rem 1.2rem;
+    border-radius: .5rem;
+    margin-bottom: 1.5rem;
+}
+
+.detalle-opciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.etiqueta-campo {
+    font-size: 1.3rem;
+    margin-bottom: .6rem;
+}
+
+.control-cantidad {
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid var(--primary-color);
+    border-radius: .5rem;
+    overflow: hidden;
+    width: max-content;
+}
+
+.control-cantidad button {
+    width: 3.6rem;
+    height: 3.6rem;
+    border: none;
+    background-color: #fff;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.control-cantidad button:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.control-cantidad span {
+    min-width: 3.6rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.detalle-total {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e5e5;
+}
+
+.detalle-total small {
+    display: block;
+    color: #6b6880;
+}
+
+.detalle-total strong {
+    font-size: 2.6rem;
+    color: var(--primary-color);
+}
+
+/* Panel lateral del carrito */
+.ventana-lateral {
+    justify-content: flex-end;
+    padding: 0;
+}
+
+.panel-carrito {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 42rem;
+    height: 100%;
+    max-height: none;
+    border-radius: 0;
+    transform: translateX(100%);
+}
+
+.ventana-flotante.abierta .panel-carrito {
+    transform: translateX(0);
+}
+
+.panel-carrito-header {
+    position: relative;
+    padding: 2.4rem;
+    background-color: var(--primary-color);
+}
+
+.panel-carrito-header h2 {
+    font-size: 2.2rem;
+    color: #fff;
+}
+
+.panel-carrito-header .fa-cart-shopping {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-right: .6rem;
+}
+
+.panel-carrito-header .ventana-cerrar {
+    top: 50%;
+    margin-top: -1.8rem;
+}
+
+.carrito-vacio {
+    text-align: center;
+    padding: 5rem 2rem;
+    font-size: 1.5rem;
+}
+
+.carrito-vacio .bi {
+    font-size: 5rem;
+    color: var(--background-color);
+}
+
+.carrito-vacio p {
+    margin: 1rem 0 2rem;
+}
+
+.lista-carrito {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem 2.4rem;
+}
+
+.item-carrito {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.item-carrito img {
+    width: 6rem;
+    height: 6rem;
+    object-fit: contain;
+    background-color: #f6f3f0;
+    border-radius: .5rem;
+}
+
+.item-datos {
+    flex: 1;
+}
+
+.item-datos h4 {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.item-datos p {
+    font-size: 1.2rem;
+    color: #6b6880;
+    margin: .3rem 0 .8rem;
+}
+
+.item-datos .control-cantidad button,
+.item-datos .control-cantidad span {
+    width: 2.8rem;
+    min-width: 2.8rem;
+    height: 2.8rem;
+    font-size: 1.4rem;
+}
+
+.item-lateral {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: .8rem;
+    font-size: 1.4rem;
+}
+
+.item-eliminar {
+    border: none;
+    background: none;
+    color: #b3261e;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: transform .3s ease;
+}
+
+.item-eliminar:hover {
+    transform: scale(1.2);
+}
+
+.carrito-resumen {
+    padding: 2rem 2.4rem 2.4rem;
+    background-color: #f6f3f0;
+    font-size: 1.4rem;
+}
+
+.fila-total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .8rem;
+}
+
+.fila-descuento {
+    display: none;
+    color: #2e7d32;
+}
+
+.fila-final {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    padding-top: .8rem;
+    border-top: 1px solid #ddd;
+}
+
+.pista-cupon {
+    font-size: 1.2rem;
+    color: #6b6880;
+    margin: 1rem 0 1.5rem;
+}
+
+.carrito-acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+}
+
+.carrito-acciones .btn {
+    --bs-btn-padding-x: 1.4rem;
+    flex: 1;
+}
+
+/* Formularios: mensajes de error y ayudas escritos por JavaScript */
+.mensaje-error {
+    font-size: 1.2rem;
+    color: #b3261e;
+    margin-top: .4rem;
+    min-height: 1.2rem;
+}
+
+.mensaje-error:empty {
+    display: none;
+}
+
+.ayuda-campo {
+    font-size: 1.2rem;
+    color: #6b6880;
+    margin-top: .4rem;
+}
+
+.contador-mensaje {
+    text-align: right;
+}
+
+.form-group input.campo-invalido,
+.form-group textarea.campo-invalido {
+    border-color: #b3261e;
+    background-color: #fff8f7;
+}
+
+/* Contacto: columna lateral con la lista de reservas */
+.contacto-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.mis-reservas {
+    display: none;
+    /* JavaScript la muestra cuando hay reservas */
+    background-color: #fff;
+    padding: 2.4rem;
+    border-radius: .5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+}
+
+.mis-reservas h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.reserva-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 0;
+    border-top: 1px solid #e5e5e5;
+    font-size: 1.3rem;
+    animation: entrada .4s ease;
+}
+
+.reserva-item strong,
+.reserva-item span {
+    display: block;
+}
+
+.reserva-item strong {
+    text-transform: capitalize;
+    color: var(--primary-color);
+}
+
+.reserva-item button {
+    font-family: inherit;
+    font-size: 1.2rem;
+    border: 1px solid #b3261e;
+    color: #b3261e;
+    background: none;
+    border-radius: .4rem;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.reserva-item button:hover {
+    background-color: #b3261e;
+    color: #fff;
+}
+
+/* Responsive de los nuevos elementos */
+@media (max-width: 768px) {
+    .detalle-producto {
+        grid-template-columns: 1fr;
+    }
+
+    .detalle-imagen {
+        padding: 2rem;
+    }
+
+    .detalle-imagen img {
+        max-width: 18rem;
+    }
+
+    .detalle-info {
+        padding: 2.4rem 2rem;
+    }
+
+    .herramientas-carta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .orden-carta select {
+        flex: 1;
+    }
+}
+
+@media (max-width: 500px) {
+    .ventana-flotante {
+        padding: 1rem;
+    }
+
+    .btn-filtro {
+        flex: 1 1 calc(50% - 1rem);
+        padding: .8rem 1rem;
+    }
+
+    .hero .content-shoping-cart .text {
+        display: none;
+    }
+}
+
+/* El botón principal del carrito ocupa toda la fila */
+.carrito-acciones .btn-aroma {
+    flex-basis: 100%;
+}
