@@ -1,67 +1,55 @@
-/* Cambio 3: diseño interactivo con Bootstrap (tooltips, toast, modal) */
-document.addEventListener('DOMContentLoaded', function () {
-    var hayBootstrap = typeof bootstrap !== 'undefined';
-    var contador = document.querySelector('.content-shoping-cart .number');
-    var carrito = document.querySelector('.container-shopping');
-    var toastEl = document.getElementById('toastAviso');
-    var toastMsg = document.getElementById('toastAvisoMsg');
-    var toast = (hayBootstrap && toastEl) ? bootstrap.Toast.getOrCreateInstance(toastEl, { delay: 2500 }) : null;
-    var total = 0;
+/* ==========================================================================
+   Utilidades comunes del sitio (se usan desde los demás archivos .js)
+   - Cambio 3: aviso (toast) de Bootstrap.
+   - Cambio 5: la lógica del carrito y de los formularios pasó a carrito.js
+     y formularios.js; aquí quedan las funciones que comparten todos.
+   ========================================================================== */
 
-    function avisar(mensaje) {
-        if (!toast) return;
-        toastMsg.textContent = mensaje;
-        toast.show();
+var hayBootstrap = typeof bootstrap !== 'undefined';
+
+// Muestra un mensaje corto en la esquina inferior (toast de Bootstrap)
+function avisar(mensaje) {
+    const toastEl = document.getElementById('toastAviso');
+    if (!hayBootstrap || toastEl === null) {
+        console.log('Aviso:', mensaje); // si no hay Bootstrap, el aviso se ve en la consola
+        return;
     }
+    document.getElementById('toastAvisoMsg').textContent = mensaje;
+    bootstrap.Toast.getOrCreateInstance(toastEl, { delay: 2500 }).show();
+}
 
-    // Botones "añadir al carrito": tooltip + contador + aviso
-    document.querySelectorAll('.add-car').forEach(function (btn) {
-        btn.setAttribute('role', 'button');
-        btn.setAttribute('tabindex', '0');
-        btn.setAttribute('aria-label', 'Añadir al carrito');
-        if (hayBootstrap) {
-            btn.setAttribute('data-bs-toggle', 'tooltip');
-            btn.setAttribute('data-bs-title', 'Añadir al carrito');
-            new bootstrap.Tooltip(btn);
+
+/* ---------- Cambio 5: ventanas flotantes propias (sin Bootstrap) ---------- */
+
+// Abre una ventana flotante agregando la clase "abierta"
+function abrirVentana(idVentana) {
+    const ventana = document.getElementById(idVentana);
+    ventana.classList.add('abierta');
+    ventana.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; // evita que la página se desplace detrás
+}
+
+// Cierra una ventana flotante quitando la clase "abierta"
+function cerrarVentana(idVentana) {
+    const ventana = document.getElementById(idVentana);
+    ventana.classList.remove('abierta');
+    ventana.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
+
+// Evento onclick del fondo oscuro: cierra solo si se hizo clic fuera del contenido
+function cerrarSiEsFondo(evento, idVentana) {
+    if (evento.target === evento.currentTarget) {
+        cerrarVentana(idVentana);
+    }
+}
+
+// La tecla Escape cierra cualquier ventana flotante que esté abierta
+document.onkeydown = function (evento) {
+    if (evento.key === 'Escape') {
+        const ventanasAbiertas = document.querySelectorAll('.ventana-flotante.abierta');
+        for (let i = 0; i < ventanasAbiertas.length; i++) {
+            cerrarVentana(ventanasAbiertas[i].id);
         }
-
-        function agregar() {
-            total++;
-            if (contador) contador.textContent = '(' + total + ')';
-            if (carrito) {
-                carrito.classList.remove('bump');
-                void carrito.offsetWidth; // reinicia la animación
-                carrito.classList.add('bump');
-            }
-            var nombre = btn.closest('.card-product').querySelector('h3').textContent;
-            avisar(nombre + ' se añadió al carrito');
-        }
-
-        btn.addEventListener('click', agregar);
-        btn.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); agregar(); }
-        });
-    });
-
-    // Modal de registro
-    var formRegistro = document.getElementById('formRegistro');
-    if (formRegistro && hayBootstrap) {
-        formRegistro.addEventListener('submit', function (e) {
-            e.preventDefault();
-            var modal = bootstrap.Modal.getInstance(document.getElementById('modalRegistro'));
-            if (modal) modal.hide();
-            formRegistro.reset();
-            avisar('¡Registro enviado! Revisa tu correo.');
-        });
     }
-
-    // Formulario de reserva (página de contacto)
-    var formReserva = document.querySelector('.reserva-form');
-    if (formReserva) {
-        formReserva.addEventListener('submit', function (e) {
-            e.preventDefault();
-            formReserva.reset();
-            avisar('Reserva enviada. Te confirmaremos pronto.');
-        });
-    }
-});
+};
